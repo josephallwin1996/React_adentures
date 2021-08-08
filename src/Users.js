@@ -2,8 +2,9 @@ import React from "react";
 
 function Users(){
     return (
-        <div className="App">
-          Hi this is from comonent 
+        <div>
+          <h1>Users</h1>
+          This page gives the details or type of users those who are using this type of Apps
         </div>
       );
 }

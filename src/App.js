@@ -1,45 +1,36 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import './App.css';
+import Nav from "./Nav";
+import About from "./About";
 import Users from "./Users";
+import Shop from "./Shop";
+import ShopDetail from "./shopDetail";
 
+import {BrowserRouter as Router, Switch, Route, } from "react-router-dom"
 function App() {
- 
-  const API_ID = "60ffe0b5cc447f5a0b6c7013";
-  //const API_KEY = "c4b482240e0ff2991eabc1f64ab28ab0";
-  //const exampleRequest = `https://api.edamam.com/search?q=chicken&app_id=${API_ID}&app_keys=${API_KEY}`;
-  var myHeaders = new Headers();
-  myHeaders.append("app-id", "60ffe0b5cc447f5a0b6c7013");
-  
-  var requestOptions = {
-    method: 'GET',
-    headers: myHeaders,
-    redirect: 'follow'
-  };
-
-  const [counter, setCounter] = useState(0);
-
-  useEffect(() => {
-    getUsers(); 
-  }, []);
-
-  const getUsers = async () =>{
-    const response = await fetch("https://dummyapi.io/data/api/user", requestOptions);
-    const data = response.json();
-    console.log(data);
-  }
-
   return (
-    <div className="App">
-      Hi this is from react
-      <form className="searchForm">
-        <input type="text" className="searchText" />
-        <button type="submit" className="searc-button" >search</button>
-        <h1 onClick = {() => setCounter(counter + 1)} >{counter}</h1>
-      </form>
-      <Users />
-    </div>
+    
+    <Router>
+      <div className="App">
+        <Nav />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/users" component={Users} />
+          <Route path="/shop" exact component={Shop} />
+          <Route path="/shop/:id" component={ShopDetail} />
+        </Switch>
+      </div>
+    </Router> 
+   
     
   );
 }
+
+const Home = () => (
+  <div>
+      <h1>Home page</h1>
+  </div>
+)
 
 export default App;

@@ -1,0 +1,13 @@
+nav{
+    display: flex;
+    background-color: aquamarine;
+    color: dodgerblue;
+    align-content: center;
+    justify-content: space-around;
+}
+.nav-links{
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
