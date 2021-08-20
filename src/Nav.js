@@ -17,6 +17,9 @@ function Nav(){
                     <Link style={navStyle} to="/shop">
                         <li>Shop</li>
                     </Link>
+                    <Link style={navStyle} to="/movie">
+                        <li>Movie</li>
+                    </Link>
                 </ul>
             </nav>
         </div>

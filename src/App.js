@@ -5,6 +5,7 @@ import About from "./About";
 import Users from "./Users";
 import Shop from "./Shop";
 import ShopDetail from "./shopDetail";
+import MovieList from "./MovieList";
 
 import {BrowserRouter as Router, Switch, Route, } from "react-router-dom"
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/users" component={Users} />
           <Route path="/shop" exact component={Shop} />
           <Route path="/shop/:id" component={ShopDetail} />
+          <Route path="/movie"  component={MovieList} />
         </Switch>
       </div>
     </Router> 
